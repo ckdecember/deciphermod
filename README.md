@@ -1,24 +1,23 @@
-# Decipher
+# Decipher Mod
 
 ## Overview
 
-Dockerized and AWS hosted Flask app to decipher messy handwriting to predict most likely word choice. Please [contact me](mailto:mevanoff24@gmail.com) if you need to use the deployed application, since the EC2 instance is currently down.  
+Original Decipher project https://github.com/mevanoff24/HandwritingDetection
+Modified to code to allow for easy switching between multiple models to predict images into text.
 
-You can see my presentation [here](https://docs.google.com/presentation/d/1zYfLiZooCKe1LT3e8FkTNU39ZUZoNQfaUbTzMXQ1yn4/edit#slide=id.p)
+## ... but why?
 
+To create a framework to help people extend the design even further.  To act as a guideline for future projects for more extensible ML code.
 
-## Motivation for this project
-Have you ever read handwritten text when you came across an indecipherable word? This is a big issue in pharmacies mis-prescribing medicine, maintenance workers mis-communicating results, or even reading lecture notes. The use cases for predicting messy handwriting is far and wide. 
-
-
-## Solution
-I have utilized an [Optical Character Recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) and [context2vec](https://u.cs.biu.ac.il/~melamuo/publications/context2vec_conll16.pdf) models with a custom weighing algorithm results from each model to decipher messy handwriting to predict most likely text. 
+## General Solution
+Using CI/CD we can speed up the deployment of different models.  With some code modifications, environment variables, a CI/CD system, and a method to record data we can build this extensible framework.
 
 ## Dependencies
 - Decipher
 - jenkins
+- and much much more!
 
-## Workflow
+## Workflow (SPOILERS for this awesome drama on HBO)
 docker run \
   --rm \
   -u root \
@@ -31,5 +30,3 @@ docker run \
 [somehow end it? or background this process]
 cat /var/jenkins_home/secrets/initialAdminPassword
 for initial administrator password
-
-
